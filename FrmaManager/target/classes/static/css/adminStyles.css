@@ -1,0 +1,300 @@
+*{
+    font-family:  Helvetica, sans-serif;
+}
+
+/* MENU */
+body,html {
+    margin: 0;
+    height: 100%;
+}
+
+
+
+.bg {
+
+  
+    /* Full height */
+    height: 100%;
+    width: 100%; 
+    float:right;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: 0.75;
+    
+  }
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(25, 51, 77);
+  opacity: 0.75;
+  width: 100%;
+  position: inherit;
+  float:right;
+}
+
+.navr  {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 25px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  float: right;
+  background-color: rgb(25, 51, 77);
+  border:0px;
+  font-size:16px;
+}
+
+
+ul.topnav li input.navr a:hover:not(.active) {
+  background-color: #ddd;
+  color:black;
+  cursor: pointer;
+}
+
+ul.topnav li.right {float: right;}
+
+#bloklewa{
+  height: 100%;
+  width: 30%;
+  max-height: 902px;
+  max-width:300px;
+  min-width: 100px;
+  background-color: rgb(173, 207, 240);
+  opacity: 0.75;
+  float:left;
+  align-items: left;
+  padding: 0;
+}
+
+.navrr{
+
+  color: white;
+  
+  padding: 0px 0px 0px 40px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 10px 10px 13%;
+  float:left;
+   width:100%; /* adjust */
+   line-height: 40px;
+  margin:0;
+  
+}
+
+ul.listawyboru{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(25, 51, 77);
+  opacity: 0.75;
+  width: 100%;
+  align-items: left;
+  
+}
+
+ul.listawyboru li a:hover:not(.active) {
+  background-color: #ddd;
+  color:black;
+  cursor: pointer;
+}
+
+ul.topnav li input:hover:not(.active) {
+  background-color: #ddd;
+  color:black;
+  cursor: pointer;
+}
+
+.container1{
+  display: grid;
+  grid-template-columns: 2fr auto;
+}
+
+
+.tabele {
+    height: 100%;
+    width: 100%;
+   max-height: 902px;
+   display:block;
+   margin-top:8px;
+  }
+  
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 70%;
+  border: 1px solid #ddd;
+  min-width:0px;
+  margin-top:1px;
+  margin-left:5%;
+  border-radius: 25px;
+}
+table tr:last-child td:first-child column {
+    border-bottom-left-radius: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+  
+ #nowyPracownik{
+ background-color: rgb(25, 51, 77);
+  opacity: 0.75;
+  padding: 20px 20px 20px 20px;
+
+  border-radius: 10px;
+  color:white;
+  text-decoration: none;
+  font-weight: bold;
+ 
+ }
+
+ #nowyPracownik:hover:not(.active) {
+  background-color: #ddd;
+  color:black;
+  cursor: pointer;
+}
+
+
+
+/* Edycja praconwika */
+
+
+
+
+
+.container {
+  padding: 16px;
+  border-radius: 0px 0px 25px 25px;
+}
+
+
+
+
+
+/* srodek okna------------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 200px;
+  }
+}
+
+#kosz:hover:not(.active) {
+color: #ddd;
+  cursor: pointer;
+}
+#edytuj:hover:not(.active) {
+	color: #ddd;
+  cursor: pointer;
+}
+
+.buttonpotw{
+  width: auto;
+  padding: 14px 22px;
+   background-color: rgb(25, 51, 77);
+  opacity: 0.75;
+  border-radius: 10px;
+  float:right;
+  color:white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size:16px;
+}
+
+	
+.buttonpotw:hover:not(.active) {
+  background-color: #ddd;
+  color:black;
+  cursor: pointer;
+  font-weight: bold;
+}
+input.buttonlogout{
+	color:black;
+	}
+	
+
+
+
+	

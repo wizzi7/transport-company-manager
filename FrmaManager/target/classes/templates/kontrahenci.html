@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://kit.fontawesome.com/c06adfe374.js"></script>
+<link rel="stylesheet" th:href="@{/css/adminStyles.css}" />
+<title>Admin | Kontrahenci</title>
+<link rel="icon" th:href="@{/images/icon.jpg}">
+
+</head>
+
+<body>
+
+	<div class="bg">
+		<ul class="topnav">
+			<li><form th:action="@{/logout}" method="post"><input  class="navr"
+				type="submit"  value="Wyloguj się"/></form></li>
+				<li class="navr" style="margin-top: 2.4px;font-size:14px">Jesteś zalogowany jako: Admin</li>
+				<li class="navr" style="float: left;font-size:26px;padding:0px 0px;margin-top:18px;margin-left:15px;">Mobile-trans</li>
+		</ul>
+		<div id="bloklewa">
+			<img th:src="@{/images/profilelogo.png}"
+				style="height: 170px; display: block; margin-left: auto; margin-right: auto; margin-top: 30px;"></img>
+			<ul class="listawyboru">
+				<li>
+					<div class="container1">
+						<a th:href="@{/admin}" class="navrr"
+							type="submit"> <i class="fas fa-address-card"
+							style="font-size: 26px; margin-right: 15%"></i> <span
+							style="display: inline-block; vertical-align: 3px; text-align: center;">Pracownicy</span>
+						</a>
+					</div> 
+				</li>
+				<li>
+					<div class="container1">
+						<a th:href="@{/admin/wynagrodzenia}"
+						 	class="navrr"> <i class="fas fa-money-check-alt"
+							style="font-size: 24px; margin-right: 11%"></i> <span
+							style="display: inline-block; vertical-align: 3px; text-align: center;">Wynagrodzenia</span></a>
+					</div> 
+				</li>
+				<li>
+					<div class="container1">
+						<a th:href="@{/admin/kontrahenci}" class="navrr"> <i
+							class="fas fa-building"
+							style="font-size: 26px; margin-right: 15%; margin-left: 5px"></i>
+							<span
+							style="display: inline-block; vertical-align: 3px; text-align: center;">Kontrahenci</span></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	<div id="tabeleKontrahenci" class="tabele" style="display: block">
+
+			<div align="center">
+
+				<!--  Entry to new page -->
+				<br> <br> <br> <br> <br> <br>
+				
+				<a href="/dodaj-kontrahenta" id="nowyPracownik">
+					Dodaj nowego Kontrahenta</a>
+				<br>
+
+				<!-- Table -->
+				<br><br>
+			<br>
+				<table>
+					<!-- Table header -->
+					<thead>
+						<tr>
+							<th>Nazwa</th>
+							<th>Email</th>
+							<th>Ulica</th>
+							<th>Nr lokalu</th>
+							<th>Kod pocztowy</th>
+							<th>Miasto</th>
+							<th>Kraj</th>
+							<th>Akcje</th>
+						</tr>
+					</thead>
+
+					<!-- Table body -->
+					<tbody>
+
+						<tr th:each="kontr : ${listKontrahenci}">
+							<td th:text="${kontr.nazwaKontrahenta}" style="text-transform: capitalize;">Nazwa</td>
+							<td th:text="${kontr.email}">Email</td>
+							<td th:text="${kontr.ulica}" style="text-transform: capitalize;">Ulica</td>
+							<td th:text="${kontr.nrLokalu}">Nr lokalu</td>
+							<td th:text="${kontr.kodPocztowy}">Kod pocztowy</td>
+							<td th:text="${kontr.miasto}" style="text-transform: capitalize;">Miasto</td>
+							<td th:text="${kontr.kraj}" style="text-transform: capitalize;">Kraj</td>
+							<td><a
+								th:href="@{'/edytuj-kontrahenta/' + ${kontr.nrKontrahenta} + '&' +  ${kontr.nrAdresu}}"><i
+									class="far fa-edit" id="edytuj"
+									style="font-size: 24px; color: black" title="Edytuj"></i></a>
+									<a
+								th:href="@{'/usun-kontrahenta/' + ${kontr.nrKontrahenta}}"
+								th:data-confirm-delete="|Czy na pewno chcesz usunąć kontrahenta ${kontr.nazwaKontrahenta}?|"
+								onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"><i
+									class="fas fa-trash" id="kosz"
+									style="font-size: 24px; color: black" title="Usuń"></i></a>
+									
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

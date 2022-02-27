@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+<title>Mobile-trans | Strona główna</title>
+<link rel="icon" th:href="@{images/icon.jpg}">
+
+</head>
+
+<body>
+	<div
+			th:style="'background: url(images/daf.jpg); 
+			height: 100%;  
+			background-position: center;
+	    background-repeat: no-repeat;
+	    background-size:cover;
+	    opacity: 0.75;'"
+			class="bg">
+	
+			<ul class="topnav">
+				<li><a onclick="return oknoLogowania();" class="navr" type="submit">Zaloguj się</a></li>
+				<li><a th:href="@{/onas}" class="navr">O Nas</a></li>
+				<li><a th:href="@{/kontakt}" class="navr">Kontakt</a></li>
+				<li class="navr" style="float: left;font-size:26px;padding:0px 0px;margin-top:18px;margin-left:15px;">Mobile-trans</li>
+			</ul>
+			<script>
+				function oknoLogowania() {
+					document.getElementById('id01').style.display = 'block';
+				}
+			</script>
+	
+			<!-- logowanie-->
+			<div id="id01" class="modal">
+	
+				<form class="modal-content animate" th:action="@{/}" method="post" >
+					<div class="imgcontainer">
+						<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+					</div>
+						<div class="container">
+							<label for="uname"><b>Login</b></label> <input type="text"
+								class="label1" placeholder="Wprowadź login"  name="username" required>
+							<label for="psw"><b>Hasło</b></label> <input type="password"
+								placeholder="Wprowadź hasło" name="password" required>
+							<button type="submit" value="Sign In">Zaloguj się</button>
+						</div>
+					<div class="container" style="background-color: #f1f1f1">
+						<button type="button"
+							onclick="document.getElementById('id01').style.display='none'"
+							class="cancelbtn">Anuluj</button>
+					</div>
+				</form>
+		</div>
+	
+		<script>
+			// Get the modal
+			var modal = document.getElementById('id01');
+	
+			// When the user clicks anywhere outside of the modal, close it
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+		</script>
+	
+		<!-- ---------------------------------------- -->
+	
+		<div id="trinfo">
+			TRANSPORT KRAJOWY <br> I MIĘDZYNARODOWY
+			<div id="opisfirmy">
+				<br> <br> <br> Nasza firma opiera się na nowoczesnych
+				środkach transportu , systemach teleinformatycznych, a przede
+				wszystkim na pracownikach <br> – są siłą napędową naszej firmy.
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
