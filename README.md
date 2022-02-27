@@ -7,7 +7,7 @@
 * [To do list](#to-do-list)
 
 ## General-info
-This project is a three-layered web application that helps to manage transport company. There are two types of users - admin and driver. Admin's able to add, modify and delete every kind of data, but drivers can only modify some data about themselves and the rest is readonly.
+This project is a three-layer web application that helps to manage transport company. There are two types of users - admin and driver. Admin's able to add, modify and delete every kind of data, but drivers can only modify some data about themselves and the rest is readonly.
 
 
 ## Technologies
